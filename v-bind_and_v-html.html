@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+    <style>
+        .fiximg{
+            width:100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="our-app">
+        <!-- 
+        if we have to bind any html attribute with any vue js attribute than we have to use 
+        v-bind: 
+        this is called
+        --Html attribute binding.
+        -->
+       <a v-bind:href="ulink" v-bind:title="title">{{ name }}</a>
+
+       <!-- html class binding -->
+
+       <img v-bind:src="image" v-bind:class="{fiximg:isactive}" alt="">
+
+       <!-- html form binding  -->
+       <form action="" method="get">
+           <input type="text" v-bind:value="name" placeholder="Name">
+           <input type="email" v-bind:value="email" placeholder="Email">
+           <button type="button" name="button">submit</button>
+       </form>
+
+       <!-- this is html content binding -->
+
+       <div v-html="content">
+
+       </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
