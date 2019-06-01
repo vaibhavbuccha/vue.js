@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="our-app">
+     counter : {{ counter }}   <br>
+     <!-- once is a modify attribute due to the use of once the function is fired only once -->
+     <button @click.once="inc">increment</button>
+     <!--  for preventing the default behaviour we use prevent 
+        like 
+    -->
+    <a href="https://www.google.com" @click.prevent>Google</a>
+
+    <!-- for stop form submition we use @submit.prevent -->
+    <form action="" @submit.prevent>
+        <button type="submit">submit</button>
+    </form>
+
+    <!-- this event fire 2 times for stoping 1 time we use stop -->
+    <div @click="clicking">
+        <button @click.stop="clicking">click me</button>
+    </div>
+
+    <!-- capture by capture we set the priority -->
+    <div @click.capture="parent">
+            <button @click="child">click me</button>
+    </div>
+</div>
+        
+
+    <script src="once-prevent-stop-capture.js"></script>
+</body>
+</html>
